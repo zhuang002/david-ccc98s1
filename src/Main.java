@@ -11,27 +11,13 @@ public class Main {
 		
 		for (int i=0;i<lines;i++) {
 			String line = sc.nextLine();
-			line = replaceWithStar(line);
+			
+			line = line.replaceAll("\\b\\w{4}\\b", "****");
+			
 			System.out.println(line);
+			
 		}
 	}
 
-	private static String replaceWithStar(String line) {
 	
-		String[] words = line.split(" ");
-		
-		for (int i=0;i<words.length;i++) {
-			String word = words[i];
-			if (word.length()==4) {
-				words[i] = "****";
-			}
-		}
-		
-		String rtLine = "";
-		for (String word:words) {
-			rtLine+=word+" ";
-		}
-		return rtLine.trim();
-	}
-
 }
